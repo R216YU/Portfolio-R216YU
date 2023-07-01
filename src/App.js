@@ -19,6 +19,10 @@ function App() {
     palette: {
       mode: mode,
     },
+    typography: {
+      fontFamily: ["Poppins", "Noto Sans JP", "sans-serif"].join(","),
+      fontSize: 14,
+    },
   });
 
   return (

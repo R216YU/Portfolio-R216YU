@@ -1,35 +1,176 @@
-import React from "react";
+import React, { useState } from "react";
+import Drawer from "@mui/material/Drawer";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { useRecoilState } from "recoil";
 import { modeAtom } from "../recoil/modeAtom";
 import { Link } from "react-router-dom";
-
 import {
   AppBar,
   Box,
-  Button,
   Container,
+  Fade,
   IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
+  Slide,
   Toolbar,
   Typography,
 } from "@mui/material";
-
-import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
+import InvertColorsIcon from "@mui/icons-material/InvertColors";
+import MenuIcon from "@mui/icons-material/Menu";
+import { yellow, pink, purple } from "@mui/material/colors";
 import navIcon from "../images/navicon.png";
-import { blue, green, pink, purple } from "@mui/material/colors";
 
 const Header = () => {
+  // MUI theme
   const [mode, setMode] = useRecoilState(modeAtom);
   const toggleModeHandle = () => {
     const newMode = mode === "dark" ? "light" : "dark";
     setMode(newMode);
+  };
+
+  // Responsive
+  const isWide = useMediaQuery("(min-width:700px)");
+
+  // Hamburger + Drawer
+  const [drawerOpened, setDrawerOpened] = useState(false);
+
+  // Components
+  const Computer = () => {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+        }}
+      >
+        <List
+          component="nav"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {navLinks.map((link) => (
+            <ListItem key={link.text} disablePadding>
+              <ListItemButton component={Link} to={link.url}>
+                <ListItemText>{link.text}</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <IconButton
+            href="mailto:r216yu@outlook.jp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <EmailIcon sx={{ color: yellow[500] }} fontSize="large" />
+          </IconButton>
+          <IconButton
+            href="https://www.instagram.com/r216yu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramIcon sx={{ color: pink[500] }} fontSize="large" />
+          </IconButton>
+          <IconButton
+            href="https://github.com/R216YU"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon sx={{ color: purple[500] }} fontSize="large" />
+          </IconButton>
+          <IconButton onClick={() => toggleModeHandle()}>
+            <InvertColorsIcon />
+          </IconButton>
+        </Box>
+      </Box>
+    );
+  };
+  const SmartPhone = () => {
+    return (
+      <Box>
+        <IconButton onClick={() => setDrawerOpened(true)}>
+          <MenuIcon />
+        </IconButton>
+
+        <Drawer
+          anchor="right"
+          open={drawerOpened}
+          onClose={() => setDrawerOpened(false)}
+          PaperProps={{ style: { width: "50%" } }}
+        >
+          <Slide direction="left" in={drawerOpened}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 1,
+              }}
+            >
+              <List
+                component="nav"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                {navLinks.map((link) => (
+                  <ListItem key={link.text} disablePadding>
+                    <ListItemButton component={Link} to={link.url}>
+                      <ListItemText>{link.text}</ListItemText>
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <IconButton
+                  href="mailto:r216yu@outlook.jp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <EmailIcon sx={{ color: yellow[500] }} fontSize="large" />
+                </IconButton>
+                <IconButton
+                  href="https://www.instagram.com/r216yu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon sx={{ color: pink[500] }} fontSize="large" />
+                </IconButton>
+                <IconButton
+                  href="https://github.com/R216YU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GitHubIcon sx={{ color: purple[500] }} fontSize="large" />
+                </IconButton>
+                <IconButton onClick={() => toggleModeHandle()}>
+                  <InvertColorsIcon />
+                </IconButton>
+              </Box>
+            </Box>
+          </Slide>
+        </Drawer>
+      </Box>
+    );
   };
 
   const navLinks = [
@@ -48,7 +189,7 @@ const Header = () => {
   ];
 
   return (
-    <AppBar sx={{ py: 1 }}>
+    <AppBar position="static" sx={{ py: 1, marginBottom: 2 }}>
       <Toolbar>
         <Container>
           <Box
@@ -62,59 +203,19 @@ const Header = () => {
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
               <Box
                 component="img"
-                sx={{ maxWidth: "45px", maxHeight: "45px" }}
+                sx={{
+                  maxWidth: "45px",
+                  maxHeight: "45px",
+                  border: "3px solid white",
+                  borderRadius: "100%",
+                }}
                 src={navIcon}
               />
-              <Typography variant="h5">RYU's Portfolio</Typography>
+              <Typography variant="h6">Portfolio</Typography>
             </Box>
 
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 1,
-              }}
-            >
-              <List
-                component="nav"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                {navLinks.map((link) => (
-                  <ListItem disablePadding>
-                    <ListItemButton component={Link} to={link.url}>
-                      <ListItemText>{link.text}</ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-              </List>
-
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <IconButton
-                  href="mailto:r216yu@outlook.jp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <EmailIcon sx={{ color: blue[500] }} fontSize="large" />
-                </IconButton>
-                <IconButton
-                  href="https://www.instagram.com/r216yu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <InstagramIcon sx={{ color: pink[500] }} fontSize="large" />
-                </IconButton>
-                <IconButton
-                  href="https://github.com/R216YU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GitHubIcon sx={{ color: purple[500] }} fontSize="large" />
-                </IconButton>
-              </Box>
-            </Box>
+            {/* Link + Icon */}
+            {isWide ? <Computer /> : <SmartPhone />}
           </Box>
         </Container>
       </Toolbar>
