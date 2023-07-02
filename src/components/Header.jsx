@@ -103,7 +103,7 @@ const Header = () => {
       </Box>
     );
   };
-  const SmartPhone = () => {
+  const Mobile = () => {
     return (
       <Box>
         <IconButton onClick={() => setDrawerOpened(true)}>
@@ -234,11 +234,13 @@ const Header = () => {
                 }}
                 src={navIcon}
               />
-              <Typography variant="h6">Ryu Suzuki</Typography>
+              <Typography variant="h5" sx={{ fontFamily: "Abel" }}>
+                RYU SUZUKI
+              </Typography>
             </Box>
 
             {/* Link + Icon */}
-            {isWide ? <Computer /> : <SmartPhone />}
+            {isWide ? <Computer /> : <Mobile />}
           </Box>
         </Container>
       </Toolbar>

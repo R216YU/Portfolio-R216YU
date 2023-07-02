@@ -12,7 +12,7 @@ const Footer = () => {
       }}
     >
       <Container>
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: "right" }}>
           <Typography variant="caption">&copy;2023 S.RYU</Typography>
         </Box>
       </Container>
