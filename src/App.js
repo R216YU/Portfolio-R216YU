@@ -22,6 +22,28 @@ function App() {
     typography: {
       fontFamily: ["Poppins", "Noto Sans JP", "sans-serif"].join(","),
       fontSize: 14,
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightMedium: 700,
+  
+      h1: { fontSize: 60 },
+      h2: { fontSize: 48 },
+      h3: { fontSize: 42 },
+      h4: { fontSize: 36 },
+      h5: { fontSize: 20 },
+      h6: { fontSize: 18 },
+      subtitle1: { fontSize: 18 },
+      body1: { fontSize: 16 },
+      button: { textTransform: 'none' },
+    },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 750,
+        md: 900,
+        lg: 1200,
+        xl: 1536,
+      },
     },
   });
 
@@ -30,8 +52,8 @@ function App() {
       <CssBaseline />
       <Header />
       <About />
-      <Skills />
-      <Works />
+      {/* <Skills />
+      <Works /> */}
       <Footer />
     </ThemeProvider>
   );
