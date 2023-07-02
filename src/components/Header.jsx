@@ -8,7 +8,6 @@ import {
   AppBar,
   Box,
   Container,
-  Fade,
   IconButton,
   List,
   ListItem,
@@ -35,7 +34,7 @@ const Header = () => {
   };
 
   // Responsive
-  const isWide = useMediaQuery("(min-width:700px)");
+  const isWide = useMediaQuery("(min-width:750px)");
 
   // Hamburger + Drawer
   const [drawerOpened, setDrawerOpened] = useState(false);
@@ -72,21 +71,30 @@ const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <EmailIcon sx={{ color: yellow[500] }} fontSize="large" />
+            <EmailIcon
+              sx={{ color: yellow[500], "&:hover": { color: yellow[300] } }}
+              fontSize="large"
+            />
           </IconButton>
           <IconButton
             href="https://www.instagram.com/r216yu/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <InstagramIcon sx={{ color: pink[500] }} fontSize="large" />
+            <InstagramIcon
+              sx={{ color: pink[500], "&:hover": { color: pink[300] } }}
+              fontSize="large"
+            />
           </IconButton>
           <IconButton
             href="https://github.com/R216YU"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GitHubIcon sx={{ color: purple[500] }} fontSize="large" />
+            <GitHubIcon
+              sx={{ color: purple[500], "&:hover": { color: purple[300] } }}
+              fontSize="large"
+            />
           </IconButton>
           <IconButton onClick={() => toggleModeHandle()}>
             <InvertColorsIcon />
@@ -146,21 +154,36 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <EmailIcon sx={{ color: yellow[500] }} fontSize="large" />
+                  <EmailIcon
+                    sx={{
+                      color: yellow[500],
+                      "&:hover": { color: yellow[300] },
+                    }}
+                    fontSize="large"
+                  />
                 </IconButton>
                 <IconButton
                   href="https://www.instagram.com/r216yu/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <InstagramIcon sx={{ color: pink[500] }} fontSize="large" />
+                  <InstagramIcon
+                    sx={{ color: pink[500], "&:hover": { color: pink[300] } }}
+                    fontSize="large"
+                  />
                 </IconButton>
                 <IconButton
                   href="https://github.com/R216YU"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GitHubIcon sx={{ color: purple[500] }} fontSize="large" />
+                  <GitHubIcon
+                    sx={{
+                      color: purple[500],
+                      "&:hover": { color: purple[300] },
+                    }}
+                    fontSize="large"
+                  />
                 </IconButton>
                 <IconButton onClick={() => toggleModeHandle()}>
                   <InvertColorsIcon />
@@ -189,7 +212,7 @@ const Header = () => {
   ];
 
   return (
-    <AppBar position="static" sx={{ py: 1, marginBottom: 2 }}>
+    <AppBar position="static" sx={{ py: 1 }}>
       <Toolbar>
         <Container>
           <Box
@@ -211,7 +234,7 @@ const Header = () => {
                 }}
                 src={navIcon}
               />
-              <Typography variant="h6">Portfolio</Typography>
+              <Typography variant="h6">Ryu Suzuki</Typography>
             </Box>
 
             {/* Link + Icon */}
