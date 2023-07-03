@@ -3,6 +3,8 @@ import React from "react";
 import { useRecoilState } from "recoil";
 import { modeAtom } from "./recoil/modeAtom";
 
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -25,7 +27,6 @@ function App() {
       fontWeightLight: 300,
       fontWeightRegular: 400,
       fontWeightMedium: 700,
-  
       h1: { fontSize: 60 },
       h2: { fontSize: 48 },
       h3: { fontSize: 42 },
@@ -34,7 +35,7 @@ function App() {
       h6: { fontSize: 18 },
       subtitle1: { fontSize: 18 },
       body1: { fontSize: 16 },
-      button: { textTransform: 'none' },
+      button: { textTransform: "none" },
     },
     breakpoints: {
       values: {
@@ -51,9 +52,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header />
-      <About />
-      {/* <Skills />
-      <Works /> */}
+      <Routes>
+        <Route path={`/`} element={<About />} />
+        <Route path={`/skills`} element={<Skills />} />
+        <Route path={`/works`} element={<Works />} />
+      </Routes>
+
       <Footer />
     </ThemeProvider>
   );

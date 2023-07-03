@@ -16,6 +16,7 @@ import {
   Slide,
   Toolbar,
   Typography,
+  Divider,
 } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
@@ -24,6 +25,7 @@ import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import MenuIcon from "@mui/icons-material/Menu";
 import { yellow, pink, purple } from "@mui/material/colors";
 import navIcon from "../images/navicon.png";
+import { pageAtom } from "../recoil/pageAtom";
 
 const Header = () => {
   // MUI theme
@@ -32,6 +34,9 @@ const Header = () => {
     const newMode = mode === "dark" ? "light" : "dark";
     setMode(newMode);
   };
+
+  // NavBar page
+  const [page] = useRecoilState(pageAtom);
 
   // Responsive
   const isWide = useMediaQuery("(min-width:750px)");
@@ -59,11 +64,19 @@ const Header = () => {
           {navLinks.map((link) => (
             <ListItem key={link.text} disablePadding>
               <ListItemButton component={Link} to={link.url}>
-                <ListItemText>{link.text}</ListItemText>
+                {page === link.text ? (
+                  <ListItemText primaryTypographyProps={{ fontWeight: "bold" }}>
+                    {link.text}
+                  </ListItemText>
+                ) : (
+                  <ListItemText>{link.text}</ListItemText>
+                )}
               </ListItemButton>
             </ListItem>
           ))}
         </List>
+
+        <Divider orientation="vertical" variant="middle" flexItem />
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <IconButton
@@ -103,6 +116,7 @@ const Header = () => {
       </Box>
     );
   };
+
   const Mobile = () => {
     return (
       <Box>
@@ -136,11 +150,21 @@ const Header = () => {
                 {navLinks.map((link) => (
                   <ListItem key={link.text} disablePadding>
                     <ListItemButton component={Link} to={link.url}>
-                      <ListItemText>{link.text}</ListItemText>
+                      {page === link.text ? (
+                        <ListItemText
+                          primaryTypographyProps={{ fontWeight: "bold" }}
+                        >
+                          {link.text}
+                        </ListItemText>
+                      ) : (
+                        <ListItemText>{link.text}</ListItemText>
+                      )}
                     </ListItemButton>
                   </ListItem>
                 ))}
               </List>
+
+              <Divider variant="middle" flexItem />
 
               <Box
                 sx={{
@@ -199,7 +223,7 @@ const Header = () => {
   const navLinks = [
     {
       text: "About",
-      url: "about",
+      url: "",
     },
     {
       text: "Skills",
@@ -239,7 +263,6 @@ const Header = () => {
               </Typography>
             </Box>
 
-            {/* Link + Icon */}
             {isWide ? <Computer /> : <Mobile />}
           </Box>
         </Container>
