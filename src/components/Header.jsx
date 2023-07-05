@@ -65,9 +65,7 @@ const Header = () => {
             <ListItem key={link.text} disablePadding>
               <ListItemButton component={Link} to={link.url}>
                 {page === link.text ? (
-                  <ListItemText primaryTypographyProps={{ fontWeight: "bold" }}>
-                    {link.text}
-                  </ListItemText>
+                  <ListItemText primaryTypographyProps={{ fontWeight: "bold" }}>{link.text}</ListItemText>
                 ) : (
                   <ListItemText>{link.text}</ListItemText>
                 )}
@@ -79,35 +77,14 @@ const Header = () => {
         <Divider orientation="vertical" variant="middle" flexItem />
 
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <IconButton
-            href="mailto:r216yu@outlook.jp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <EmailIcon
-              sx={{ color: yellow[500], "&:hover": { color: yellow[300] } }}
-              fontSize="large"
-            />
+          <IconButton href="mailto:r216yu@outlook.jp" target="_blank" rel="noopener noreferrer">
+            <EmailIcon sx={{ color: yellow[500], "&:hover": { color: yellow[300] } }} fontSize="large" />
           </IconButton>
-          <IconButton
-            href="https://www.instagram.com/r216yu/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramIcon
-              sx={{ color: pink[500], "&:hover": { color: pink[300] } }}
-              fontSize="large"
-            />
+          <IconButton href="https://www.instagram.com/r216yu/" target="_blank" rel="noopener noreferrer">
+            <InstagramIcon sx={{ color: pink[500], "&:hover": { color: pink[300] } }} fontSize="large" />
           </IconButton>
-          <IconButton
-            href="https://github.com/R216YU"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubIcon
-              sx={{ color: purple[500], "&:hover": { color: purple[300] } }}
-              fontSize="large"
-            />
+          <IconButton href="https://github.com/R216YU" target="_blank" rel="noopener noreferrer">
+            <GitHubIcon sx={{ color: purple[500], "&:hover": { color: purple[300] } }} fontSize="large" />
           </IconButton>
           <IconButton onClick={() => toggleModeHandle()}>
             <InvertColorsIcon />
@@ -151,11 +128,7 @@ const Header = () => {
                   <ListItem key={link.text} disablePadding>
                     <ListItemButton component={Link} to={link.url}>
                       {page === link.text ? (
-                        <ListItemText
-                          primaryTypographyProps={{ fontWeight: "bold" }}
-                        >
-                          {link.text}
-                        </ListItemText>
+                        <ListItemText primaryTypographyProps={{ fontWeight: "bold" }}>{link.text}</ListItemText>
                       ) : (
                         <ListItemText>{link.text}</ListItemText>
                       )}
@@ -173,11 +146,7 @@ const Header = () => {
                   alignItems: "center",
                 }}
               >
-                <IconButton
-                  href="mailto:r216yu@outlook.jp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <IconButton href="mailto:r216yu@outlook.jp" target="_blank" rel="noopener noreferrer">
                   <EmailIcon
                     sx={{
                       color: yellow[500],
@@ -186,21 +155,10 @@ const Header = () => {
                     fontSize="large"
                   />
                 </IconButton>
-                <IconButton
-                  href="https://www.instagram.com/r216yu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <InstagramIcon
-                    sx={{ color: pink[500], "&:hover": { color: pink[300] } }}
-                    fontSize="large"
-                  />
+                <IconButton href="https://www.instagram.com/r216yu/" target="_blank" rel="noopener noreferrer">
+                  <InstagramIcon sx={{ color: pink[500], "&:hover": { color: pink[300] } }} fontSize="large" />
                 </IconButton>
-                <IconButton
-                  href="https://github.com/R216YU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <IconButton href="https://github.com/R216YU" target="_blank" rel="noopener noreferrer">
                   <GitHubIcon
                     sx={{
                       color: purple[500],

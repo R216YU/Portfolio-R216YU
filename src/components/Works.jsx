@@ -30,10 +30,7 @@ const Works = () => {
     <Box sx={{ py: 8 }}>
       <Container>
         <Box sx={{ textAlign: "center", marginBottom: 4 }}>
-          <Typography
-            variant="h3"
-            sx={{ fontFamily: "Abel", fontSize: { xs: 36, sm: 42 } }}
-          >
+          <Typography variant="h3" sx={{ fontFamily: "Abel", fontSize: { xs: 36, sm: 42 } }}>
             Works
           </Typography>
         </Box>

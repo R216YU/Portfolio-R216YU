@@ -14,10 +14,7 @@ const About = () => {
     <Box sx={{ py: 8 }}>
       <Container>
         <Box sx={{ textAlign: "center", marginBottom: 4 }}>
-          <Typography
-            variant="h3"
-            sx={{ fontFamily: "Abel", fontSize: { xs: 36, sm: 42 } }}
-          >
+          <Typography variant="h3" sx={{ fontFamily: "Abel", fontSize: { xs: 36, sm: 42 } }}>
             About
           </Typography>
         </Box>
@@ -76,19 +73,13 @@ const About = () => {
                   Bio
                 </Typography>
                 <Typography variant="body1">
-                  <Typography
-                    variant="span"
-                    sx={{ fontWeight: "bold", marginRight: "1rem" }}
-                  >
+                  <Typography variant="span" sx={{ fontWeight: "bold", marginRight: "1rem" }}>
                     2000
                   </Typography>
                   静岡県浜松市にて生誕
                 </Typography>
                 <Typography variant="body1">
-                  <Typography
-                    variant="span"
-                    sx={{ fontWeight: "bold", marginRight: "1rem" }}
-                  >
+                  <Typography variant="span" sx={{ fontWeight: "bold", marginRight: "1rem" }}>
                     2024
                   </Typography>
                   24年に日本大学経済学部経済学科を卒業予定
@@ -106,9 +97,7 @@ const About = () => {
                 >
                   Fav
                 </Typography>
-                <Typography variant="body1">
-                  ゲーム, ドラマ, 邦画, アニメ, 音楽, 筋トレ, 犬
-                </Typography>
+                <Typography variant="body1">ゲーム, ドラマ, 邦画, アニメ, 音楽, 筋トレ, 犬</Typography>
               </Box>
             </Card>
           </Box>
