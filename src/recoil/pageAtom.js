@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
 export const pageAtom = atom({
-  key: "ViewingPage",
+  key: "PageHighlight",
   default: "about",
 });
