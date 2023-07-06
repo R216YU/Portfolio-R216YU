@@ -80,6 +80,21 @@ const About = () => {
                     </Typography>
                     静岡県浜松市にて生誕
                   </Typography>
+
+                  <Typography variant="body1">
+                    <Typography variant="span" sx={{ fontWeight: "bold", marginRight: "1rem" }}>
+                      2005
+                    </Typography>
+                    富山県に移住
+                  </Typography>
+
+                  <Typography variant="body1">
+                    <Typography variant="span" sx={{ fontWeight: "bold", marginRight: "1rem" }}>
+                      2020
+                    </Typography>
+                    大学のため状況
+                  </Typography>
+
                   <Typography variant="body1">
                     <Typography variant="span" sx={{ fontWeight: "bold", marginRight: "1rem" }}>
                       2024
