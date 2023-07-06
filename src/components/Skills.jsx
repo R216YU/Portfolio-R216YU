@@ -32,14 +32,12 @@ const Skills = () => {
             gap: 4,
           }}
         >
-          <Card variant="outlined" sx={{ p: 2 }}>
-            <Typography variant="h6">Python</Typography>
-          </Card>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
             <Card
               sx={{
                 p: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 2,
@@ -52,11 +50,12 @@ const Skills = () => {
               <SiStreamlit size="2rem" color={red[500]} />
             </Card>
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
             <Card
               sx={{
                 p: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 2,
@@ -68,11 +67,12 @@ const Skills = () => {
               <SiNextdotjs size="2rem" color={grey[50]} />
             </Card>
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
             <Card
               sx={{
                 p: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 2,
@@ -82,11 +82,12 @@ const Skills = () => {
               <SiLaravel size="2rem" color={red[500]} />
             </Card>
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
             <Card
               sx={{
                 p: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 2,
@@ -98,11 +99,12 @@ const Skills = () => {
               <SiMui size="2rem" color={blue[500]} />
             </Card>
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ width: { xs: "100%", sm: "50%" } }}>
             <Card
               sx={{
                 p: 3,
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 2,
