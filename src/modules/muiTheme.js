@@ -1,5 +1,2 @@
-export const darkMode = {
-};
-export const lightMode = {
-
-};
+export const darkMode = {};
+export const lightMode = {};

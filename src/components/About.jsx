@@ -92,7 +92,7 @@ const About = () => {
                     <Typography variant="span" sx={{ fontWeight: "bold", marginRight: "1rem" }}>
                       2020
                     </Typography>
-                    大学のため状況
+                    大学進学のため、上京
                   </Typography>
 
                   <Typography variant="body1">

@@ -17,7 +17,7 @@ const Works = () => {
       title: "Portfolio",
       image: portfolioImage,
       text: `以前のポートフォリオを、Material-UIを用いてリニューアル。\nこちらのサイトでは、私の技術や作品をご紹介しています。\nまた主に利用しているライブラリはReact, Material-UI, Recoil等です。`,
-      url: "",
+      url: "https://portfolio-r216-yu.vercel.app/",
     },
     {
       title: "Team-Balancer",
