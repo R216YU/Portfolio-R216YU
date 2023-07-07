@@ -59,7 +59,7 @@ const About = () => {
                 </Typography>
                 <Box sx={{ marginBottom: "1rem" }}>
                   <Typography variant="body1" sx={{ whiteSpace: "pre-wrap" }}>
-                    {`Ryu Suzukiのポートフォリオへようこそ。\n私は独学でプログラミングを学習している大学生です。\n現在はWebに関する言語、フレームワークをメインに学習しています。\nこのサイトでは、独学エンジニアである私の経歴や技術、作品をご紹介していきます。\nどうぞごゆっくりご覧ください。`}
+                    {`Ryu Suzukiのポートフォリオへようこそ。\n私は独学でプログラミングを学習している大学生です。\n現在はWebに関する言語、ライブラリを主に学習しています。\nこのサイトでは、私の経歴や技術、作品をご紹介しています。`}
                   </Typography>
                 </Box>
 
