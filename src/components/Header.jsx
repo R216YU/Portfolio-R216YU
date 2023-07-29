@@ -25,25 +25,11 @@ import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import MenuIcon from "@mui/icons-material/Menu";
 import { yellow, pink, purple } from "@mui/material/colors";
 import navIcon from "../images/navicon.png";
-import { pageAtom } from "../recoil/pageAtom";
 import { motion } from "framer-motion";
+import { useHeaderHooks } from "../hooks/useHeaderHooks";
 
 const Header = () => {
-  // MUI theme
-  const [mode, setMode] = useRecoilState(modeAtom);
-  const toggleModeHandle = () => {
-    const newMode = mode === "dark" ? "light" : "dark";
-    setMode(newMode);
-  };
-
-  // NavBar page
-  const [page] = useRecoilState(pageAtom);
-
-  // Responsive
-  const isWide = useMediaQuery("(min-width:750px)");
-
-  // Hamburger + Drawer
-  const [drawerOpened, setDrawerOpened] = useState(false);
+  const { toggleModeHandle, navLinks, page, isWide, drawerOpened, setDrawerOpened } = useHeaderHooks();
 
   // Components
   const Computer = () => {
@@ -204,21 +190,6 @@ const Header = () => {
       </Box>
     );
   };
-
-  const navLinks = [
-    {
-      text: "About",
-      url: "",
-    },
-    {
-      text: "Skills",
-      url: "skills",
-    },
-    {
-      text: "Works",
-      url: "works",
-    },
-  ];
 
   return (
     <AppBar position="static" sx={{ py: 1 }}>
