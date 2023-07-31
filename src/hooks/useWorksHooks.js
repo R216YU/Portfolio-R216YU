@@ -1,4 +1,7 @@
 import { useRecoilState } from "recoil";
+import { pageAtom } from "../recoil/pageAtom";
+import portfolioImage from "../images/works/portfolioImage.png"
+import teamBalancerImage from "../images/works/teamBalancerImage.png"
 
 export const useWorksHooks = () => {
   const [page, setPage] = useRecoilState(pageAtom);

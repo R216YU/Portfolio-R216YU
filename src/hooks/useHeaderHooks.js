@@ -1,6 +1,8 @@
 import { useState } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useRecoilState } from "recoil";
+import { pageAtom } from "../recoil/pageAtom";
+import { modeAtom } from "../recoil/modeAtom";
 
 export const useHeaderHooks = () => {
   // MUI theme
