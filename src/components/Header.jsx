@@ -126,7 +126,7 @@ const Header = () => {
               >
                 {navLinks.map((link) => (
                   <ListItem key={link.text} disablePadding>
-                    <ListItemButton component={Link} to={link.url}>
+                    <ListItemButton component={Link} to={link.url} onClick={() => setDrawerOpened(false)}>
                       <motion.div whileHover={{ scale: 1.2 }}>
                         {page === link.text ? (
                           <ListItemText primaryTypographyProps={{ fontWeight: "bold" }}>{link.text}</ListItemText>
@@ -149,7 +149,12 @@ const Header = () => {
                 }}
               >
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <IconButton href="mailto:r216yu@outlook.jp" target="_blank" rel="noopener noreferrer">
+                  <IconButton
+                    href="mailto:r216yu@outlook.jp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setDrawerOpened(false)}
+                  >
                     <EmailIcon
                       sx={{
                         color: yellow[500],
@@ -161,13 +166,23 @@ const Header = () => {
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <IconButton href="https://www.instagram.com/r216yu/" target="_blank" rel="noopener noreferrer">
+                  <IconButton
+                    href="https://www.instagram.com/r216yu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setDrawerOpened(false)}
+                  >
                     <InstagramIcon sx={{ color: pink[500], "&:hover": { color: pink[300] } }} fontSize="large" />
                   </IconButton>
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <IconButton href="https://github.com/R216YU" target="_blank" rel="noopener noreferrer">
+                  <IconButton
+                    href="https://github.com/R216YU"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setDrawerOpened(false)}
+                  >
                     <GitHubIcon
                       sx={{
                         color: purple[500],
@@ -179,7 +194,12 @@ const Header = () => {
                 </motion.div>
 
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <IconButton onClick={() => toggleModeHandle()}>
+                  <IconButton
+                    onClick={() => {
+                      toggleModeHandle();
+                      setDrawerOpened(false);
+                    }}
+                  >
                     <InvertColorsIcon />
                   </IconButton>
                 </motion.div>
